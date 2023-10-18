@@ -1199,6 +1199,8 @@ void VR :: send_pkt(uint8_t cmd, uint8_t *buf, uint8_t len)
 	Serial2.write(len+2);
     delay(TXDLY);
 	Serial2.write(cmd);
+	delay(TXDLY);
+	Serial2.write(buf, len);
     delay(TXDLY);
 	Serial2.write(FRAME_END);
     delay(TXDLY);
